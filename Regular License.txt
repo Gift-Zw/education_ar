@@ -1,0 +1,53 @@
+FLUTTER CODED TEMPLATES LICENSE AGREEMENT
+
+This Flutter Coded Templates License Agreement (the "Agreement") is entered into between Flutter Coded Templates (referred to as "Licensor") and the end user (referred to as "Licensee" or "You"). This Agreement governs the use of the products available on the website "Flutter Coded Templates" (the "Website") and Gumroad.
+
+1. DEFINITIONS
+
+1.1 "Item" refers to the digital work or product available on the Website, including software templates, source code, documentation, and any related materials.
+
+2. GRANT OF LICENSE
+
+2.1 Regular License: Subject to the terms and conditions of this Agreement, Licensor grants Licensee an ongoing, non-exclusive, worldwide license to use the selected Item(s) for the creation of a single End Product. This license allows for personal or commercial use and distribution of the End Product for free.
+
+3. END PRODUCT DEFINITION
+
+3.1 An "End Product" is defined as a work that incorporates the Item, requiring skill and effort. The End Product falls into one of the following categories:
+
+   (a) For an Item that is a template, the End Product is a customized implementation of the Item. For example, if the Item is a website theme, the End Product is the final website customized with your content.
+
+   (b) For other types of Items, the End Product is a work that incorporates the Item along with other elements, making it larger in scope and different in nature than the Item itself. For example, if the Item is a button graphic, the End Product could be a complete website that includes the button graphic.
+
+4. LICENSE USAGE
+
+4.1 Creation for Clients: Licensee is permitted to create one End Product using the Item for a client. The resulting End Product can be transferred to the client for any fee, and this license is then transferred to the client.
+
+4.2 Distribution: The licensee is allowed to make any number of copies of the single End Product, provided that the End Product is distributed for free.
+
+4.3 Modification and Derivative Works: Licensee can modify or manipulate the Item, combine it with other works, and create derivative works. However, any resulting works are subject to the terms of this license, and the End Product created must comply with clause 3.
+
+5. RESTRICTIONS ON USAGE
+
+5.1 Selling of End Product: The licensee is not permitted to sell the End Product, except to one client. If Licensee or the client intends to sell the End Product to multiple clients, an Extended License is required.
+
+5.2 Redistribution Restrictions: Licensee cannot redistribute the Item as stock, as part of a tool or template, or with source files. This restriction applies whether the Item is used on its own or bundled with other items, even if modifications have been made. Redistribution or making the Item available as-is or with superficial modifications, even for free, is prohibited.
+
+5.3 "On Demand" or Customization Applications: Licensee cannot use the Item in any application that allows end users to customize a digital or physical product to their specific needs. Examples include website builders, "create your own" slideshow apps and e-card generators.
+
+5.4 Stand-Alone Component Usage: Licensee cannot use a single component of the Item on a stand-alone basis. The Item should be used as part of an End Product, and individual components should not be extracted and used separately.
+
+5.5 Prohibition of Extraction: Licensee must not permit end users of the End Product to extract the Item and use it separately from the End Product.
+
+5.6 Use of Logos: Licensee cannot use the Item in a logo, trademark, or service mark.
+
+6. OTHER TERMS
+
+6.1 Component License Variation: Some Items may contain components sourced from elsewhere, which may be subject to different license terms, such as open source or creative commons licenses. In such cases, the author will identify the component, and the specific license terms for that component will apply, while the terms of this license will apply to the rest of the Item.
+
+6.2 Lawful Use and Sensitive Subjects: Licensee must use the Item only for lawful purposes. If the Item contains images of people, Licensee cannot use those images in a way that creates a fake identity, implies personal endorsement, or is defamatory, obscene, demeaning, or connected with sensitive subjects. 
+
+6.3 Editorial Use and Intellectual Property: Items containing digital versions of real products, trademarks, or other intellectual property owned by others are licensed for editorial use only. Licensee is responsible for obtaining the necessary clearances from the intellectual property rights owner if their use requires clearance.
+
+6.4 Termination: This license can be terminated if Licensee breaches any of its terms. In such a case, Licensee must cease making copies of or distributing the End Product until the Item is removed from it.
+
+6.5 Ownership and License Agreement: This license is a direct agreement between the author and Licensee. The author of the Item retains ownership of the Item and grants the Licensee the license on the terms specified in this Agreement.
