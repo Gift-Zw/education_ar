@@ -17,10 +17,10 @@ class _LandingPageState extends State<LandingPage> {
   final List<Widget> _pages = [
     const HomeView(),
     const SearchView(),
-    const MessageView(),
+    // const MessageView(),
     const ProfileView(),
   ];
-  int _currentIndex = 0;
+  static int _currentIndex = 0;
   @override
   Widget build(BuildContext context) {
     bool isDarkMode(BuildContext context) =>
@@ -79,14 +79,14 @@ class _LandingPageState extends State<LandingPage> {
                   color: isDarkMode(context) ? Colors.white : Colors.grey,
                 ),
               ),
-              BottomNavigationBarItem(
-                icon: const Icon(Icons.wechat_outlined),
-                label: 'Classes',
-                activeIcon: Icon(
-                  Icons.wechat_outlined,
-                  color: isDarkMode(context) ? Colors.white : Colors.grey,
-                ),
-              ),
+              // BottomNavigationBarItem(
+              //   icon: const Icon(Icons.wechat_outlined),
+              //   label: 'Classes',
+              //   activeIcon: Icon(
+              //     Icons.wechat_outlined,
+              //     color: isDarkMode(context) ? Colors.white : Colors.grey,
+              //   ),
+              // ),
               BottomNavigationBarItem(
                 icon: const Icon(Icons.person_outline, color: Colors.grey),
                 label: 'Profile',

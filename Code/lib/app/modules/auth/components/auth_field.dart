@@ -5,12 +5,14 @@ class AuthField extends StatelessWidget {
   final TextEditingController controller;
   final void Function(String)? onChanged;
   final String? Function(String?)? validator;
+  final bool? obscureText;
   final String hintText;
   const AuthField({
     required this.controller,
     required this.hintText,
     this.onChanged,
     this.validator,
+    this.obscureText,
     super.key,
   });
 
@@ -20,6 +22,7 @@ class AuthField extends StatelessWidget {
       child: TextFormField(
         controller: controller,
         onChanged: onChanged,
+        obscureText: obscureText ?? false,
         validator: validator,
         decoration: InputDecoration(
           hintText: hintText,

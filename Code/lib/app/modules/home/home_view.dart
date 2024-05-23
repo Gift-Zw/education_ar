@@ -24,28 +24,28 @@ class _HomeViewState extends State<HomeView> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(height: 50.h),
+              SizedBox(height: 70.h),
               Text('Hi Tadiwa', style: AppTypography.kBold32),
               Text(
                 'What do you want to view? ☀️',
                 style: AppTypography.kLight16,
               ),
-              SizedBox(height: AppSpacing.thirtyVertical),
-              GestureDetector(
-                onTap: () {
-                  Get.to<void>(() => const SearchView());
-                },
-                child: SearchField(
-                  controller: TextEditingController(),
-                  hint: 'Search for 3D models, names, etc.',
-                ),
-              ),
-              SizedBox(height: 26.h),
-              Text(
-                'Latest Discussions',
-                style: AppTypography.kBold18,
-              ),
-              SizedBox(height: AppSpacing.twentyVertical),
+
+              // GestureDetector(
+              //   onTap: () {
+              //     Get.to<void>(() => const SearchView());
+              //   },
+              //   child: SearchField(
+              //     controller: TextEditingController(),
+              //     hint: 'Search for 3D models, names, etc.',
+              //   ),
+              // ),
+              // SizedBox(height: 26.h),
+              // Text(
+              //   'Latest Discussions',
+              //   style: AppTypography.kBold18,
+              // ),
+              // SizedBox(height: AppSpacing.twentyVertical),
               // Row(
               //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
               //   children: [
@@ -77,10 +77,9 @@ class _HomeViewState extends State<HomeView> {
               // ),
               SizedBox(height: AppSpacing.fiftyVertical),
               const CourseList(),
-              SizedBox(height: 60..h),
+              SizedBox(height: 20..h),
               const BestTeachers(),
               SizedBox(height: AppSpacing.thirtyVertical),
-              SizedBox(height: 20.h),
             ],
           ),
         ),

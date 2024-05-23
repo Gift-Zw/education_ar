@@ -15,20 +15,20 @@ class BestTeachersModel {
 
 List<BestTeachersModel> bestTeachers = [
   BestTeachersModel(
-    name: 'Martín Abasto',
-    bio: 'Illustrator',
+    name: 'Tadiwa Zinzombe',
+    bio: 'Volcanicity',
     image: AppAssets.kUser3,
     position: 1,
   ),
   BestTeachersModel(
-    name: 'Emmy Elsner',
-    bio: 'Design Expert',
+    name: 'Gift Mugaragumbo',
+    bio: 'Geology',
     image: AppAssets.kUser6,
     position: 2,
   ),
   BestTeachersModel(
-    name: 'Meng Ru',
-    bio: 'Esports Coach',
+    name: 'John Moyo',
+    bio: 'Deserts',
     image: AppAssets.kUser7,
     position: 3,
   ),

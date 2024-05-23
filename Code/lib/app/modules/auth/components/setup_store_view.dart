@@ -1,6 +1,8 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:eden_learning_app/app/data/constants/constants.dart';
 import 'package:eden_learning_app/app/modules/auth/components/auth_field.dart';
+import 'package:eden_learning_app/app/modules/widgets/buttons/primary_button.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -13,19 +15,17 @@ class SetupStoreView extends StatefulWidget {
 }
 
 class _SetupStoreViewState extends State<SetupStoreView> {
-  final TextEditingController firstName = TextEditingController();
-  final TextEditingController lastName = TextEditingController();
+  final TextEditingController fullName = TextEditingController();
   final TextEditingController email = TextEditingController();
   final TextEditingController password = TextEditingController();
+  final TextEditingController repeatPassword = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: AppSpacing.twentyHorizontal),
       child: Column(
         children: [
-          const Spacer(),
-          Image.asset(AppAssets.kStoreSetup),
-          SizedBox(height: 90.h),
+          SizedBox(height: 130.h),
           FadeInRight(
             duration: const Duration(milliseconds: 1000),
             child: Text(
@@ -38,25 +38,14 @@ class _SetupStoreViewState extends State<SetupStoreView> {
           FadeInLeft(
             duration: const Duration(milliseconds: 1000),
             child: AuthField(
-              controller: firstName,
-              hintText: 'First Name',
+              controller: fullName,
+              hintText: 'Full Name',
               onChanged: (value) {
                 widget.onChanged!(value);
               },
             ),
           ),
-          SizedBox(height: 10.h),
-          FadeInLeft(
-            duration: const Duration(milliseconds: 1000),
-            child: AuthField(
-              controller: lastName,
-              hintText: 'Last Name',
-              onChanged: (value) {
-                widget.onChanged!(value);
-              },
-            ),
-          ),
-          SizedBox(height: 10.h),
+          SizedBox(height: 20.h),
           FadeInLeft(
             duration: const Duration(milliseconds: 1000),
             child: AuthField(
@@ -67,18 +56,50 @@ class _SetupStoreViewState extends State<SetupStoreView> {
               },
             ),
           ),
-          SizedBox(height: 10.h),
+          SizedBox(height: 20.h),
           FadeInLeft(
             duration: const Duration(milliseconds: 1000),
             child: AuthField(
               controller: password,
+              obscureText: true,
               hintText: 'Password',
               onChanged: (value) {
                 widget.onChanged!(value);
               },
             ),
           ),
-          SizedBox(height: 10.h),
+          SizedBox(height: 20.h),
+          FadeInLeft(
+            duration: const Duration(milliseconds: 1000),
+            child: AuthField(
+              controller: repeatPassword,
+              obscureText: true,
+              hintText: 'Repeat Password',
+              onChanged: (value) {
+                widget.onChanged!(value);
+              },
+            ),
+          ),
+          SizedBox(height: 30.h),
+          PrimaryButton(
+            onTap: () async {
+              final FirebaseAuth _auth = FirebaseAuth.instance;
+              try {
+                UserCredential userCredential =
+                    await _auth.createUserWithEmailAndPassword(
+                  email: email.text,
+                  password: password.text,
+                );
+                SnackBar(content: Text('done'));
+              } catch (e) {
+                SnackBar(
+                  content: Text('Failed to sign up: $e'),
+                );
+                return null;
+              }
+            },
+            text: 'sign Up',
+          )
         ],
       ),
     );

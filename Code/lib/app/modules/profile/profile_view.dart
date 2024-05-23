@@ -9,6 +9,7 @@ import 'package:eden_learning_app/app/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class ProfileView extends StatelessWidget {
   const ProfileView({super.key});
@@ -112,7 +113,18 @@ class ProfileView extends StatelessWidget {
                           SizedBox(
                             height: 30.h,
                           ),
-                          PrimaryButton(onTap: () {}, text: 'Sign Out'),
+                          PrimaryButton(
+                              onTap: () async {
+                                final SharedPreferences pref =
+                                    await SharedPreferences.getInstance();
+
+                                await pref.remove('isLogged');
+                                await pref.remove('email');
+                                await pref.remove('fullName');
+                                Get.offAllNamed<dynamic>(
+                                    AppRoutes.getOnboardingRoute());
+                              },
+                              text: 'Sign Out'),
                           SizedBox(
                             height: 90.h,
                             width: 5,

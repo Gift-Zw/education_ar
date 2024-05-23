@@ -7,7 +7,7 @@ class ARViewer extends StatelessWidget {
   final String? title;
 
   const ARViewer(
-      {Key? key, required this.src, required this.alt, required this.title})
+      {required this.src, required this.alt, required this.title, Key? key})
       : super(key: key);
 
   @override
@@ -18,8 +18,8 @@ class ARViewer extends StatelessWidget {
         src: src!,
         alt: alt,
         ar: true,
+        arScale: ArScale.fixed,
         autoRotate: true,
-        cameraControls: true,
       ),
     );
   }

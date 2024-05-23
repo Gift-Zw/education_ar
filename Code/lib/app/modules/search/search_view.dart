@@ -10,10 +10,40 @@ import 'package:eden_learning_app/app/modules/search/components/model_card.dart'
 import 'package:eden_learning_app/app/modules/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 
-class SearchView extends StatelessWidget {
+class SearchView extends StatefulWidget {
   const SearchView({super.key});
+
+  @override
+  State<SearchView> createState() => _SearchViewState();
+}
+
+class _SearchViewState extends State<SearchView> {
+  List<GeoModel> models = List<GeoModel>.from(geoModels);
+  TextEditingController searchController = TextEditingController();
+
+  void filterCategory(ModelCategory category) {
+    setState(() {
+      models = List<GeoModel>.from(geoModels);
+      models = models
+          .where((model) => model.category.name == category.name)
+          .toList();
+    });
+  }
+
+  void searchModels(String text) {
+    setState(() {
+      models.clear();
+      for (var model in geoModels) {
+        if (model.name.toLowerCase().contains(text.toLowerCase()) ||
+            model.category.name.toLowerCase().contains(text.toLowerCase())) {
+          models.add(model);
+        }
+      }
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -34,10 +64,23 @@ class SearchView extends StatelessWidget {
               Row(
                 children: [
                   Expanded(
-                    child: SearchField(
-                      controller: TextEditingController(),
-                      hint: 'Search for 3D models, names, etc.',
-                      isEnabled: true,
+                    child: TextField(
+                      controller: searchController,
+                      enabled: true,
+                      onChanged: ((value) => searchModels(value)),
+                      decoration: InputDecoration(
+                        hintText: 'Search for 3D models, names, etc ',
+                        prefixIcon: IconButton(
+                          onPressed: null,
+                          icon: SvgPicture.asset(
+                            AppAssets.kSearch,
+                            colorFilter: ColorFilter.mode(
+                              isDarkMode(context) ? Colors.white : Colors.black,
+                              BlendMode.srcIn,
+                            ),
+                          ),
+                        ),
+                      ),
                     ),
                   ),
                   SizedBox(width: 10.w),
@@ -58,21 +101,23 @@ class SearchView extends StatelessWidget {
                   clipBehavior: Clip.none,
                   itemBuilder: (context, index) {
                     return CustomChips(
-                      onTap: () {},
+                      onTap: () {
+                        filterCategory(dummyModelCategories[index]);
+                      },
                       index: index,
                       category: dummyModelCategories[index],
                       isSelected: false,
                     );
                   },
                   separatorBuilder: (context, index) => SizedBox(width: 10.w),
-                  itemCount: 8,
+                  itemCount: dummyMghodelCategories.length,
                 ),
               ),
               SizedBox(height: 25.h),
               SizedBox(
                   height: 475.h,
                   child: GridView.builder(
-                    itemCount: geoModels.length,
+                    itemCount: models.length,
                     padding:
                         EdgeInsets.symmetric(horizontal: 5.w, vertical: 8.h),
                     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
@@ -83,7 +128,7 @@ class SearchView extends StatelessWidget {
                     ),
                     itemBuilder: (context, index) {
                       return ModelGridCard(
-                        model: geoModels[index],
+                        model: models[index],
                       );
                     },
                   )),

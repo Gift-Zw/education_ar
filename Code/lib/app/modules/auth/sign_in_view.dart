@@ -5,9 +5,11 @@ import 'package:eden_learning_app/app/modules/auth/components/divider_with_text.
 import 'package:eden_learning_app/app/modules/widgets/animations/shake_animation.dart';
 import 'package:eden_learning_app/app/modules/widgets/widgets.dart';
 import 'package:eden_learning_app/app/routes/app_routes.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class SignInView extends StatefulWidget {
   const SignInView({super.key});
@@ -54,6 +56,7 @@ class _SignInViewState extends State<SignInView> {
               AuthField(
                 controller: _passwordController,
                 hintText: 'Enter Password',
+                obscureText: true,
               ),
               Align(
                 alignment: Alignment.centerRight,
@@ -68,11 +71,31 @@ class _SignInViewState extends State<SignInView> {
                 shakeOffset: 10.0,
                 shakeDuration: const Duration(milliseconds: 500),
                 child: PrimaryButton(
-                  onTap: () {
-                    if (_emailController.text.isNotEmpty &&
-                        _passwordController.text.isNotEmpty) {
+                  onTap: () async {
+                    final FirebaseAuth _auth = FirebaseAuth.instance;
+                    final SharedPreferences pref =
+                        await SharedPreferences.getInstance();
+                    try {
+                      UserCredential userCredential =
+                          await _auth.signInWithEmailAndPassword(
+                        email: _emailController.text,
+                        password: _passwordController.text,
+                      );
+                      if (userCredential.user != null) {
+                        await pref.setBool('isLogged', true);
+                        await pref.setString('email', _emailController.text);
+                      }
                       Get.offAllNamed<dynamic>(AppRoutes.getLandingPageRoute());
-                    } else {
+                      // ignore: avoid_catches_without_on_clauses
+                    } catch (e) {
+                      Get.showSnackbar(
+                        GetSnackBar(
+                          title: 'Log In Failure',
+                          message: e.toString(),
+                          icon: const Icon(Icons.refresh),
+                          duration: const Duration(seconds: 3),
+                        ),
+                      );
                       _shakeKey.currentState?.shake();
                     }
                   },

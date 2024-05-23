@@ -47,23 +47,6 @@ class _SearchPageState extends State<SearchPage> {
         width: MediaQuery.of(context).size.width,
         child: Center(
           child: WebViewWidget(controller: controller),
-          /*
-          WebView(
-            // ignore: prefer_collection_literals
-            gestureRecognizers: Set()
-              ..add(
-                Factory<VerticalDragGestureRecognizer>(
-                  () => VerticalDragGestureRecognizer(),
-                ), // or null
-              ),
-            gestureNavigationEnabled: true,
-            javascriptMode: JavascriptMode.unrestricted,
-            initialUrl: "http://5f19-34-125-201-42.ngrok.io",
-            onWebViewCreated: ((WebViewController webViewController) {
-              _completer.complete(webViewController);
-            }),
-          ),
-          */
         ),
       ),
     );

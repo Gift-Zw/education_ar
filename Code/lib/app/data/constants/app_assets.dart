@@ -78,4 +78,46 @@ class AppAssets {
   static String kStoreSetup = 'assets/images/store_setup.png';
   static String kStoreSet = 'assets/images/store_set.png';
   static String kProject = 'assets/images/project.png';
+
+  //models
+
+  static String modelAntelopeCanyon = 'assets/models/antelope_canyon.glb';
+  static String modelEarth = 'assets/models/EarthAR.glb';
+  static String modelVolcano = 'assets/models/volcano.glb';
+  static String modelWaterFall = 'assets/models/waterfall_display.glb';
+  static String modelMountFuji = 'assets/models/mountfuji.glb';
+  static String modelErodedSandstone = 'assets/models/eroded_sandstone.glb';
+  static String modelHeroMountain = 'assets/models/mt/hero_mountain.glb';
+  static String modelSadleMountain = 'assets/models/mt/saddle_mountain.glb';
+  static String modelWaterfallMountain =
+      'assets/models/waterfall/waterfall_mountain_river.glb';
+  static String modelCliffRock = 'assets/models/stones/alaskan_cliff_rock.glb';
+  static String modelGraniteRock =
+      'assets/models/stones/granite_rock_yellowish_brown.glb';
+  static String modelGraniteBrown =
+      'assets/models/stones/granite_stone_brown_01.glb';
+  static String modelIgenousRocks =
+      'assets/models/stones/igenous_rock_basalt_pahoehoe_lava_rock..glb';
+  static String modelLavaFlow =
+      'assets/models/volcanoes/lava_flow_-_pbr_3d_scan.glb';
+  static String modelVolcanoeLava = 'assets/models/volcanoes/lava.glb';
+  static String modelKrakatauVolcano =
+      'assets/models/volcanoes/volcano (1).glb';
+  static String modelKilaueaVolcano = 'assets/models/volcanoes/volcano.glb';
+  static String modelVolcanicRocks = 'assets/models/stones/volcanic_rock.glb';
+  static String modelCruaghStream =
+      'assets/models/stream/cruagh_road_stream.glb';
+  static String model243Waterfall =
+      'assets/models/stream/day_243_waterfall.glb';
+  static String modelStream = 'assets/models/stream/stream.glb';
+  static String modelWaikikiWaterfall =
+      'assets/models/waterfall_display_at_hilton_waikiki_hawaii.glb';
+  // categories
+
+  static String categoryMountain = 'assets/images/mountain.jpg';
+  static String categoryRivers = 'assets/images/river.jpg';
+  static String categoryVolcanoes = 'assets/images/volcanoe.jpg';
+  static String categoryCanyons = 'assets/images/canyon.jpg';
+  static String categoryPlanets = 'assets/images/Earth.jpg';
+  static String categoryrocks = 'assets/images/rocks2.jpg';
 }

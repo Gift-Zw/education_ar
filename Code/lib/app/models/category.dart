@@ -12,25 +12,30 @@ class ModelCategory {
 }
 
 List<ModelCategory> dummyModelCategories = [
-  ModelCategory(id: '1', name: 'Mountains', image: AppAssets.kActivity),
+  ModelCategory(id: '1', name: 'Mountains', image: AppAssets.categoryMountain),
   ModelCategory(
     id: '2',
     name: 'Rivers',
-    image: AppAssets.kActivity,
+    image: AppAssets.categoryRivers,
   ),
   ModelCategory(
     id: '3',
-    name: 'Forests',
-    image: AppAssets.kActivity,
+    name: 'Volcanoes',
+    image: AppAssets.categoryVolcanoes,
   ),
   ModelCategory(
     id: '4',
-    name: 'Deserts',
-    image: AppAssets.kActivity,
+    name: 'Rocks',
+    image: AppAssets.categoryrocks,
   ),
   ModelCategory(
     id: '5',
-    name: 'Oceans',
-    image: AppAssets.kActivity,
+    name: 'Canyons',
+    image: AppAssets.categoryCanyons,
+  ),
+  ModelCategory(
+    id: '6',
+    name: 'Planets',
+    image: AppAssets.categoryPlanets,
   ),
 ];

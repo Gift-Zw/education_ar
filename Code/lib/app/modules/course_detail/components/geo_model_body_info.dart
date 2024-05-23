@@ -28,7 +28,7 @@ class ModelBodyInfo extends StatelessWidget {
             horizontal: AppSpacing.twentyHorizontal,
           ),
           child: Text(
-            '${model.category}',
+            '${model.category.name}',
             style: AppTypography.kLight14,
           ),
         ),

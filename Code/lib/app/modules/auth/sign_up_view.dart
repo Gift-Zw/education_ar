@@ -19,7 +19,6 @@ class SignUpView extends StatefulWidget {
 
 class _SignUpViewState extends State<SignUpView> with TickerProviderStateMixin {
   final PageController _pageController = PageController();
-  int _currentIndex = 0;
 
   late AnimationController rippleController;
   late AnimationController scaleController;
@@ -66,18 +65,6 @@ class _SignUpViewState extends State<SignUpView> with TickerProviderStateMixin {
   Widget build(BuildContext context) {
     return Scaffold(
       extendBodyBehindAppBar: true,
-      appBar: CustomBackAppBar(
-        leadingCallback: () {
-          if (_currentIndex > 0) {
-            _pageController.previousPage(
-              duration: const Duration(milliseconds: 500),
-              curve: Curves.fastLinearToSlowEaseIn,
-            );
-          } else {
-            Get.back<void>();
-          }
-        },
-      ),
       body: Column(
         children: [
           Expanded(
@@ -87,20 +74,11 @@ class _SignUpViewState extends State<SignUpView> with TickerProviderStateMixin {
                 PageView(
                   controller: _pageController,
                   physics: const NeverScrollableScrollPhysics(),
-                  onPageChanged: (index) {
-                    setState(() {
-                      _currentIndex = index;
-                    });
-                  },
+                  onPageChanged: (index) {},
                   children: [
                     UserTypeView(
                       onUserTypeSelected: (userType) {
                         debugPrint(userType.toString());
-                      },
-                    ),
-                    SetupStoreView(
-                      onChanged: (value) {
-                        debugPrint(value);
                       },
                     ),
                     const SetupCompleteView(),
@@ -109,46 +87,20 @@ class _SignUpViewState extends State<SignUpView> with TickerProviderStateMixin {
               ],
             ),
           ),
-          SizedBox(height: AppSpacing.thirtyVertical),
-          CustomIndicator(
-            controller: _pageController,
-            dotsLength: 3,
-          ),
-          SizedBox(height: AppSpacing.tenVertical),
           Padding(
-            padding: EdgeInsets.all(AppSpacing.twentyVertical),
-            child: _currentIndex < 2
-                ? PrimaryButton(
-                    onTap: () {
-                      FocusScope.of(context).unfocus();
-                      Future<void>.delayed(const Duration(milliseconds: 500))
-                          .then(
-                        (value) => {
-                          _pageController.nextPage(
-                            duration: const Duration(milliseconds: 500),
-                            curve: Curves.fastOutSlowIn,
-                          ),
-                        },
-                      );
+              padding: EdgeInsets.all(AppSpacing.twentyVertical),
+              child: PrimaryButton(
+                onTap: () {
+                  FocusScope.of(context).unfocus();
+                  Future<void>.delayed(const Duration(milliseconds: 200)).then(
+                    (value) => {
+                      Get.offAllNamed<dynamic>(
+                          AppRoutes.getNewSignUpPageRoute())
                     },
-                    text: 'Continue',
-                  )
-                : AnimatedBuilder(
-                    animation: scaleAnimation,
-                    builder: (context, child) => Transform.scale(
-                      scale: scaleAnimation.value,
-                      child: PrimaryButton(
-                        onTap: () {
-                          scaleController.forward();
-                        },
-                        text: scaleController.isAnimating ||
-                                scaleController.isCompleted
-                            ? ''
-                            : 'Continue',
-                      ),
-                    ),
-                  ),
-          ),
+                  );
+                },
+                text: 'Continue',
+              )),
         ],
       ),
     );

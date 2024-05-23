@@ -1,3 +1,4 @@
+import 'package:eden_learning_app/app/modules/auth/new_signup.dart';
 import 'package:eden_learning_app/app/modules/auth/sign_in_view.dart';
 import 'package:eden_learning_app/app/modules/auth/sign_up_view.dart';
 import 'package:eden_learning_app/app/modules/landing_page/landing_page.dart';
@@ -13,6 +14,7 @@ class AppRoutes {
   static String signUp = '/sign-up';
   static String landing = '/landing-page';
   static String settings = '/settings';
+  static String newSignUp = '/newSignUp';
 
   static List<GetPage> routes = [
     GetPage<Route<dynamic>>(
@@ -26,6 +28,10 @@ class AppRoutes {
     GetPage<Route<dynamic>>(
       name: signUp,
       page: () => const SignUpView(),
+    ),
+    GetPage<Route<dynamic>>(
+      name: newSignUp,
+      page: () => const NewSignUpView(),
     ),
     GetPage<Route<dynamic>>(
       name: landing,
@@ -43,4 +49,5 @@ class AppRoutes {
   static String getSignUpRoute() => signUp;
   static String getLandingPageRoute() => landing;
   static String getSettingPageRoute() => settings;
+  static String getNewSignUpPageRoute() => newSignUp;
 }

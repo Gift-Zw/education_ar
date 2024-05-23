@@ -61,8 +61,8 @@ class _CourseDetailViewState extends State<ModelDetailView> {
         child: GestureDetector(
           onTap: () {
             Get.to<Widget>(() => ARViewer(
-                  src: 'assets/Astronaut.glb',
-                  title: 'Hime',
+                  src: widget.model.src,
+                  title: widget.model.name,
                   alt: 'Demo',
                 ));
           },

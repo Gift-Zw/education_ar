@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "354551227710",
+    "project_id": "tadi-5a478",
+    "storage_bucket": "tadi-5a478.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:354551227710:android:62037d089b88bed8c3786f",
+        "android_client_info": {
+          "package_name": "com.example.eden_learning_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAP-nhgDrU53osdSB_tKJCjwnPf9kHGsis"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
